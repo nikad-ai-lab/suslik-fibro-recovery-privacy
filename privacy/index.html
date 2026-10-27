@@ -1,30 +1,15 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="referrer" content="no-referrer">
-<title>Privacy Policy — Suslik Fibro Recovery</title>
-<style>body{font:17px/1.6 system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 22px;color:#202923}h1,h2{line-height:1.25}h2{font-size:1.2rem;margin-top:1.8em}.draft{padding:16px;background:#fff2cf;border:1px solid #b68d37}a{color:#175b40}</style>
-</head>
-<body>
-<main>
-<h1>Suslik Fibro Recovery Privacy Policy</h1>
-<p>Last updated: 27 October 2026</p>
-<p>This policy covers the current local-only iOS preview of Suslik Fibro Recovery, also known as “Суслик в тумане”.</p>
-<h2>Information processed by the app</h2>
-<p>The app stores the wellbeing ratings, optional symptoms, notes, events and drafts you enter, together with dates, time zones, preferences and quest progress. It uses this information on your device to display your diary, charts, reminders and experimental wellbeing indicators.</p>
-<h2>Storage and sharing</h2>
-<p>Your diary is stored locally on your iPhone. The current app has no account registration, developer-operated data server, advertising, tracking or third-party analytics. It does not send your diary to the developer, AI services or wearable providers. CloudKit synchronization is disabled. Depending on your device settings, Apple or computer backups may include app data.</p>
-<p>If you choose to export JSON or CSV files, iOS shares them only with the destination you select. Those copies are then subject to that destination's privacy practices.</p>
-<h2>Reminders and wearable data</h2>
-<p>Optional reminders are scheduled locally with your permission. The current preview does not connect to WHOOP or other wearable accounts. Any displayed wearable demo values are fictional and are not saved in your diary or exported. This policy will be updated before a connected WHOOP feature is enabled.</p>
-<h2>Retention and deletion</h2>
-<p>Local records remain until you delete them. You can delete all local app data in Settings and disable reminders. Deleting local data does not remove copies you exported or existing device backups; manage these separately with their storage provider.</p>
-<h2>This policy website</h2>
-<p>When this policy is hosted on GitHub Pages, GitHub logs visitors' IP addresses for security. The page itself uses no analytics, forms or third-party scripts. See the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>.</p>
-<h2>Contact</h2>
-<p>For privacy questions, contact the developer at <a href="mailto:nikad.ai.lab@gmail.com">nikad.ai.lab@gmail.com</a>.</p>
-</main>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="no-referrer"><title>Privacy Policy — Suslik Fibro Recovery</title><style>body{font:17px/1.6 system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 22px;color:#202923}h1,h2{line-height:1.25}h2{font-size:1.2rem;margin-top:1.8em}a{color:#175b40}</style></head>
+<body><main><h1>Suslik Fibro Recovery Privacy Policy</h1><p>Last updated: 27 October 2026</p>
+<p>This policy covers the independently developed iOS preview, also known as “Суслик в тумане”, including its optional WHOOP connection. The developer and privacy contact can be reached at <a href="mailto:nikad.ai.lab@gmail.com">nikad.ai.lab@gmail.com</a>.</p>
+<h2>Your local diary</h2><p>Wellbeing ratings, symptoms, notes, events, drafts, dates, time zones, preferences and quest progress are stored locally on your iPhone using SwiftData. Your diary is not uploaded to our server, WHOOP or AI services. CloudKit synchronization is disabled. Device or computer backups may include your diary. Optional reminders run locally with your permission.</p>
+<h2>Optional WHOOP connection</h2><p>Connecting is voluntary and requires your authorization at WHOOP. The requested permissions are read:recovery, read:sleep and read:cycles, plus offline to refresh access without repeated sign-in. We do not request profile, email, body measurement or workout permissions.</p>
+<p>When you manually synchronize, a separate backend on Hostinger retrieves WHOOP recovery, heart rate variability (HRV), resting heart rate, sleep and daily Strain for the last seven days. These readings travel over HTTPS through the backend to your iPhone. Provider responses are processed in memory and are not saved to the backend database. The app displays readings in memory, without adding them to the diary or export or using them in FRS, Radar Lite or check-in calculations.</p>
+<h2>Credentials and retention</h2><p>WHOOP passwords are entered only at WHOOP. Our Client Secret stays on the server. WHOOP access and refresh tokens are encrypted at rest on the backend with AES-256-GCM; the encryption key is stored separately. The backend stores a hashed app-session identifier and the time of the last successful synchronization. The app keeps its own backend-session credential and synchronization timestamp in device-only Keychain, not WHOOP tokens.</p>
+<p>Authorization attempts expire after ten minutes. Unclaimed grants are revoked during cleanup. Connection credentials remain until you disconnect, authorization expires or is revoked, or cleanup follows 90 days without synchronization. Failed revocations are retried: encrypted credentials are retained solely to complete revocation, while synchronization is blocked.</p>
+<h2>Disconnecting and deleting</h2><p>Use “Отключить WHOOP” to revoke access and remove stored tokens. After confirmed revocation the server deletes credentials and connection metadata, and the app clears its session key, displayed readings and timestamp. If WHOOP is unavailable, the app shows that revocation is pending. You can also revoke the integration through WHOOP. Server snapshots, if enabled by the hosting provider, may retain encrypted copies under the provider's backup retention; revoked tokens cannot authorize further access.</p>
+<p>You can delete local app data in Settings. If WHOOP is connected, the updated app first requests disconnection. User-selected JSON and CSV exports and device backups must be deleted separately from their storage locations.</p>
+<h2>Hosting and other processing</h2><p>Hostinger hosts the backend and may process infrastructure metadata. WHOOP processes authorization and supplies authorized account data under its own privacy terms. Hosting and provider processing may occur outside your country. The application has no advertising, tracking, third-party analytics or AI data sharing. Backend request logging is disabled; authorization codes, credentials, tokens and health readings are not written to application logs.</p>
+<p>This static policy page is hosted by GitHub Pages, which logs visitors’ IP addresses for security. It contains no analytics, forms or third-party scripts. See the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a> and <a href="https://www.hostinger.com/legal/privacy-policy">Hostinger Privacy Policy</a>.</p>
+<h2>Questions and requests</h2><p>For privacy questions or deletion requests, contact <a href="mailto:nikad.ai.lab@gmail.com">nikad.ai.lab@gmail.com</a>. Do not send passwords, access tokens or sensitive health records by email.</p>
+</main></body></html>
